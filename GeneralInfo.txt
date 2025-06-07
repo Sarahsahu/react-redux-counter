@@ -1,0 +1,106 @@
+index.css → Global Styles
+✅ Use for:
+Base styles that apply to the entire app
+Styling basic HTML elements like body, h1, a, etc.
+
+Typically imported in:  main.jsx 
+Ex:
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Times New Roman';
+  background-color: #f2f2f2;
+}
+
+-----------------------------------------------------------------------
+🟡 2. App.css → Top-Level Layout / App-Wide Sections
+✅ Use for: Styling the <App /> component itself
+
+Layout containers like headers, footers, navigation bars
+
+🧠 Think of this as:
+“What styles help structure the main parts of the app?”
+
+Typically imported in: App.jsx
+
+Ex:
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.navbar {
+  background: #333;
+  color: white;
+}
+
+--------------------------------------------------------------------
+🔵 3.Component CSS → Component-Specific Styles
+✅ Use for:
+Styles only used in the UserCard component
+
+🧠 Think of this as:
+“What styles are only needed for this one component?”
+
+Typically imported in: UserCard.jsx
+
+Ex:
+.user-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+}
+#user-image {
+  border-radius: 50%;
+}
+--------------------------------------------------------------------
+What are PROPS?
+
+Props (short for properties) are parameters you pass into a component.
+Inside the component, you access them to customize what it shows.
+They work like function arguments but for React components.
+
+HOW USE PROPS?
+
+Instead of hardcoding things like:
+<p>Saumya Sahu</p>
+
+
+1.You pass the name from outside in App.jsx:
+<UserCard name="Saumya Sahu" />
+
+
+2.Then inside UserCard.jsx, you read the prop:
+const UserCard = (props) =>
+ {
+  return <p>{props.name}</p>;
+};
+
+------------------------------------------------------------------------------
+What is a Hook?
+A Hook is just a special function that React gives us to add features (like memory, side effects, etc.) to our components.
+
+The most common one:
+✅ useState – lets your component remember stuff like a score, a count, text, etc.
+
+🧠 Think of useState like a box that remembers a value
+SYNTAX:
+const [count, setCount] = useState(0);
+
+This line does 2 things:
+count(variable) → gives you the current value (starts at 0).
+setCount() → is a function you use to change the value.
+
+React will remember that change and update the screen when it happens.
+
+🎮 Example: A Game Score
+const [score, setScore] = useState(0);
+You show: score
+When something good happens: setScore(score + 1)
+
+
+WHEN WE CLICK THE BUTTON, THE VALUE SHOULD BE UPDATED .
+

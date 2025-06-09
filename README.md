@@ -1,6 +1,6 @@
-# react-redux-counter
+# React-Redux-counter
 
-A simple counter app using React and Redux Toolkit.
+A simple counter app using React and Redux Toolkit|Learning by Doing 
 
 ## Features
 
